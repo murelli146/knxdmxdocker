@@ -1,3 +1,6 @@
-FROM debian
+FROM debian:buster-slim
+MAINTAINER Gernot Klobucaric <murelli146>
 COPY root / 
-RUN /usr/bin/knxdmxd -d -c /etc/knxdmxd.conf -u ip:192.168.179.62 -p /var/run/knxdmxd.pid >> knxdmxd.log
+ENV IPEIBD 192.168.179.62
+ENV IPE131 192.168.179.214
+ENTRYPOINT ["sh","/etc/knxdmxd/run.sh"]
