@@ -42,12 +42,11 @@ docker build -t knxdmxdocker .
 ```
 
 ## Container erstellen
-***Volume für Konfig erstellen
 
+Volume für Konfig erstellen:
 `docker build -t knxdmxdocker .`
 
-***Container erstellen
-
+Container erstellen:
 `docker run -d -v knxdmxd-conf:/etc/knxdmxd --name=knxdmxdocker --log-opt max-size=2m --log-opt max-file=3 --restart unless-stopped --network=macvlan0 --ip=192.168.179.235 --hostname=knxdmxd knxdmxdocker`
 
 |Beschreibung:| |
