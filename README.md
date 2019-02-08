@@ -2,6 +2,9 @@
 
 Verbindet die KNX Gruppenadressen mit DMX Universen und Kanälen.
 
+Verfügbar auf [GitHub](https://github.com/murelli146/knxdmxdocker) und [Docker Hub](https://hub.docker.com/r/murelli146/knxdmxdocker)
+
+
 ## knxdmxd
 Der knxdmxd verbindet den KNX mit dem DMX Bus über das E1.31 Protokoll.
 Der knxdmxd lässt sich über die knxdmxd.conf wie ein normaler Dimmaktor für jeden Kanal in allen Universen einstellen.
