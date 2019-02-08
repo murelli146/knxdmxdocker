@@ -31,3 +31,34 @@ Mittlerweile gibt es E1.31 Bridgen auch in Deutschland zum kauf.
 z.B. Der [OctoNode](https://www.ulrichradig.de/home/index.php/dmx/8-kanal-art-net) für 8 DMX Universen mit je 512 Kanälen (36 Updates / Sekunde). 
 
 ---
+
+## Image erstellen
+
+```
+git clone https://github.com/murelli146/knxdmxdocker.git
+cd knxdmxdocker
+docker build -t knxdmxdocker .
+
+```
+
+## Container erstellen
+***Volume für Konfig erstellen
+`docker build -t knxdmxdocker .`
+***Container erstellen
+`docker run -d -v knxdmxd-conf:/etc/knxdmxd --name=knxdmxdocker --log-opt max-size=2m --log-opt max-file=3 --restart unless-stopped --network=macvlan0 --ip=192.168.179.235 --hostname=knxdmxd knxdmxdocker`
+
+|Beschreibung:| |
+| --- | --- |
+|docker run \												|                                                     |
+|-d \														| Run container in background and print container ID  |
+|-v knxdmxd-conf:/etc/knxdmxd \								| Bind mount a volume                                 |
+|--name=knxdmxdocker \										| Assign a name to the container                      |
+|--log-opt max-size=2m --log-opt max-file=3 \				| Log driver options                                  |
+|--restart unless-stopped \									| Restart policy to apply when a container exits      |
+|--network=macvlan0 \										| Connect a container to a network                    |
+|--ip=192.168.179.235 \										| IPv4 address (e.g., 172.30.100.104)                 |
+|--hostname=knxdmxd /										| Container host name                                 |
+|knxdmxdocker 									| Image                                               |
+
+---
+
