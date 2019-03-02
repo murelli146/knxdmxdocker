@@ -1,4 +1,4 @@
-FROM debian:buster-slim
+FROM debian:latest
 MAINTAINER Gernot Klobucaric <murelli146>
 COPY root / 
 ENV IPEIBD 192.168.179.62
