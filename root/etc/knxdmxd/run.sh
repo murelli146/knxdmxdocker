@@ -1,6 +1,6 @@
 #!/bin/bash
-# knxdmxd starten ohne Debug
-/usr/bin/knxdmxd -c /etc/knxdmxd/knxdmxd.conf -u ip:$IPEIBD -p /var/run/knxdmxd.pid -r $IPE131 > /dev/null 2>&1 &
+# knxdmxd starten ohne Debug als Deamon
+/usr/bin/knxdmxd -d -c /etc/knxdmxd/knxdmxd.conf -u ip:$IPEIBD -p /var/run/knxdmxd.pid -r $IPE131
 # knxdmxd starten mit Debug
 #/usr/bin/knxdmxd -c /etc/knxdmxd/knxdmxd.conf -u ip:$IPEIBD -p /var/run/knxdmxd.pid -r $IPE131
 status=$?
