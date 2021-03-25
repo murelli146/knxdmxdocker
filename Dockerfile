@@ -29,9 +29,8 @@
 #
 FROM debian:latest
 
-#COPY --from=builder /knxd_*.deb /knxd-tools_*.deb ./
-RUN apt-get update && apt-get -y install libev4 libusb-1.0-0 init-system-helpers
-#  && dpkg -i knxd_*.deb knxd-tools_*.deb
+RUN apt-get update && apt-get -y install libev4 libusb-1.0-0 init-system-helpers \
+  && dpkg -i knxd_*.deb knxd-tools_*.deb
 
 COPY root / 
 
