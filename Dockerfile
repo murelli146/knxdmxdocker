@@ -27,7 +27,8 @@
 #
 ## install in a fresh and thus clean environment
 #
-FROM debian:latest
+#FROM debian:latest
+FROM debian:stretch
 
 RUN apt-get update && apt-get -y install libev4 libusb-1.0-0 init-system-helpers \
   && dpkg -i knxd_*.deb knxd-tools_*.deb
